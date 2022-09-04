@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>Destroy an inbox | zing</title>
+</head>
+<body>
+    <div id="brand">
+        <h1 id="zing">zing</h1>
+    </div>
+    <div id="title-two">
+        <h1 id="title">Someone you dislike?</h1>
+        <h2 id="subtext">Destroy their inbox; send up to 1000 emails all at once, anonymously</h2>
+    </div>
+    <div id="form-ish">
+        <form action="http://127.0.0.1:5000/sending" method="POST">
+            <div class="elements-in-form">
+                <label for="email_address">Email Address: </label>
+                <input type="email" name="email_address" id="email_address" placeholder="email...">
+                <label for="subject">Subject: </label>
+                <input type="text" name="subject" placeholder="subject...">
+                <label for="message">Message content: </label>
+                <input type="text" name="message" placeholder="message...">
+                <label for="times">How many times: </label>
+                <input type="number" name='times'>
+                {% for message in get_flashed_messages() %}
+                    <b style="color: rgb(255, 136, 0); padding-top: 5px;">{{message}}</b>
+                {% endfor %}
+                <input id="submit" type="submit" value="Destroy their inbox">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
