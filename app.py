@@ -32,6 +32,9 @@ def sending():
             flash('Enter details correctly')
             return redirect(url_for('index'))
 
+        if email_address == 'linustalacko1@gmail.com':
+            return "Not allowed to send to the alpha male"
+
         if int(how_many_times) < 0:
             return redirect(url_for('stupid'))
 

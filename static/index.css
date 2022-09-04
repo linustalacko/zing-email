@@ -3,7 +3,6 @@ body {
     font-family: 'Catamaran', sans-serif;
     background: linear-gradient(#000000, #333333);
     color: white;
-    overflow: hidden;
 }
 
 #brand {
@@ -36,7 +35,7 @@ body {
 #form-ish {
     display: flex;
     justify-content: center;
-    padding-bottom: 70%;
+    padding-bottom: 20%;
     font-size: 25px;
 }
 
